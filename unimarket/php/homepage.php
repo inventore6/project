@@ -1,3 +1,9 @@
+
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['user_id']);
+$nome = $isLoggedIn ? $_SESSION['nome'] : ''; // Nome utente dalla sessione
+?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -6,6 +12,7 @@
     <title>UniMarket - Home</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script> <!-- File JavaScript separato -->
 </head>
 <body>
 
@@ -21,14 +28,25 @@
         </form>
     </div>
     <div class="header-actions">
-        <div class="auth-links">
-            <a href="register.php">Iscriviti</a>
-            <span>|</span>
-            <a href="login.php">Accedi</a>
-        </div>
-        <div class="lang-select">
-           
-        </div>
+        <?php if ($isLoggedIn): ?>
+            <div class="user-menu">
+                <div class="user-avatar" onclick="toggleMenu()">
+                    <i class="fa-solid fa-user"></i> <!-- Icona del profilo -->
+                </div>
+                <span class="nome" onclick="toggleMenu()"><?php echo htmlspecialchars($nome); ?></span>
+                <div class="dropdown-menu" id="userDropdown">
+                    <ul>
+                        <li><a href="profilo.php">Profilo</a></li>
+                        <li><a href="logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        <?php else: ?>
+            <div class="auth-links">
+                <a href="register.php">Iscriviti</a>
+                <a href="login.php">Accedi</a>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 
@@ -36,7 +54,7 @@
 <nav class="main-nav">
     <ul class="nav-categories">
         <li class="nav-item first-item">
-            <a href="#"><img src="immagini/libri.jpg" class="nav-icon"> Libri</a>
+            <a href="#"><img src="../immagini/libri.jpg" class="nav-icon"> Libri</a>
             <div class="dropdown">
                 <p>Libri di testo universitari</p>
                 <p>Romanzi</p>
@@ -100,29 +118,27 @@
 <footer class="site-footer">
     <div class="footer-container">
         <div class="footer-column">
-            <h4 id="footer-title-1">UniMarket</h4>
+            <h4>UniMarket</h4>
             <ul>
-                <li><a id="footer-chi-siamo" href="../chi-siamo.html">Chi siamo</a></li>
+                <li><a href="../chi-siamo.html">Chi siamo</a></li>
             </ul>
         </div>
         <div class="footer-column">
-            <h4 id="footer-title-2">Cosa fare</h4>
+            <h4>Cosa fare</h4>
             <ul>
-                <li><a id="footer-come-vendere" href="../come-vendere.html">Come vendere</a></li>
-                <li><a id="footer-come-acquistare" href="../come-acquistare.html">Come acquistare</a></li>
+                <li><a href="../come-vendere.html">Come vendere</a></li>
+                <li><a href="../come-acquistare.html">Come acquistare</a></li>
             </ul>
         </div>
         <div class="footer-column">
-            <h4 id="footer-title-3">Supporto</h4>
+            <h4>Supporto</h4>
             <ul>
-                <li><a id="footer-contattaci" href="#">Contattaci</a></li>
-                <li><a id="footer-faq" href="#">FAQ</a></li>
+                <li><a href="#">Contattaci</a></li>
+                <li><a href="#">FAQ</a></li>
             </ul>
         </div>
     </div>
 </footer>
-
-
 
 </body>
 </html>

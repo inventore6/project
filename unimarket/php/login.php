@@ -64,7 +64,7 @@
 </head>
 <body>
     <div class="login-container">
-        <img src="immagini/logo.png" alt="UniMarket Logo">
+        <img src="../immagini/logo.png" alt="UniMarket Logo">
         <h2>Accedi</h2>
         <?php if (isset($_GET['error'])): ?>
             <p class="error-message">Email o password errati.</p>

@@ -1,4 +1,4 @@
-<!-- filepath: c:\xampp\htdocs\unimarket\profilo.php -->
+
 <?php
 session_start();
 $isLoggedIn = isset($_SESSION['user_id']);
@@ -12,7 +12,7 @@ $nome = $isLoggedIn ? $_SESSION['nome'] : 'Nome Utente';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profilo Utente</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -23,7 +23,7 @@ $nome = $isLoggedIn ? $_SESSION['nome'] : 'Nome Utente';
         <a href="home.php"><img src="../immagini/logo.png" alt="Logo"></a>
     </div>
     <div class="nav-links">
-        <a href="home.php">Home</a>
+        <a href="homepage.php">Home</a>
         <a href="profilo.php">Profilo</a>
         <a href="logout.php">Logout</a>
     </div>
@@ -32,7 +32,7 @@ $nome = $isLoggedIn ? $_SESSION['nome'] : 'Nome Utente';
 <!-- Contenuto del profilo -->
 <div class="profile-container">
     <div class="profile-image">
-        <img src="immagini/profile.png" alt="Immagine Profilo" id="profilePic">
+        <img src="../immagini/profile.png" alt="Immagine Profilo" id="profilePic">
         <button onclick="changeProfilePic()">Modifica Immagine</button>
     </div>
     <div class="profile-info">

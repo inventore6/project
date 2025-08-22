@@ -65,13 +65,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Registrazione</title>
-    <link rel="stylesheet" href="registerstyle.css">
+    <link rel="stylesheet" href="../registerstyle.css">
 </head>
 <body>
     <div class="form-wrapper">
         <div class="form-container">
             <div class="logo">
-                <img src="immagini/Logo.png" alt="Logo">
+                <img src="../immagini/Logo.png" alt="Logo">
             </div>
             <form id="registerForm" action="register.php" method="POST">
                 <div>

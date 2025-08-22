@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['nome'] = $row['nome'];
             $_SESSION['email'] = $row['email'];
-            header("Location: home.php"); // Reindirizza a home.php
+            header("Location: homepage.php"); // Reindirizza a home.php
             exit();
         }
     }
