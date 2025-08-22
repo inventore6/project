@@ -11,20 +11,20 @@
         <div class="logo">
             <img src="logo_uni_market.png" alt="Uni Market Logo">
         </div>
-        <nav class="navbar">
-            
-                <a href="#musica">Musica</a></li>
-                <a href="#appunti">Appunti</a></li>
-                <a href="#libri">Libri</a></li>
-                <a href="#elettronica">Elettronica</a></li>
-                <a href="#vestiti">Vestiti</a></li>
-            
+        < class="navbar">
+            <ul>
+                <li><a href="#musica">Musica</a></li>
+                <li><a href="#appunti">Appunti</a></li>
+                <li><a href="#libri">Libri</a></li>
+                <li><a href="#elettronica">Elettronica</a></li>
+                <li><a href="#vestiti">Vestiti</a></li>
+            </ul>
         </nav>
         <div class="search-login">
             <input type="text" class="search-bar" placeholder="Cerca...">
             
-            <a href="login.html" class="btn">Accedi</a>
-            <a href="register.html" class="btn">Registrati</a>
+            <a href="login.php" class="btn">Accedi</a>
+            <a href="register.php" class="btn">Registrati</a>
         </div>
     </div>
 </body>
