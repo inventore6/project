@@ -42,7 +42,7 @@ $nome = $isLoggedIn ? $_SESSION['nome'] : ''; // Nome utente dalla sessione
                 </div>
             </div>
         <?php else: ?>
-            <div class="auth-links">
+            <div class="auth-links">ddddd
                 <a href="register.php">Iscriviti</a>
                 <a href="login.php">Accedi</a>
             </div>
