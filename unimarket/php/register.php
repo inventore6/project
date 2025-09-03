@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $plain_password = $password; // Salva la password in formato originale
 
         // Prepara la query corretta
-        $sql = "INSERT INTO studente (nome, cognome, email, password, nome_universita) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO studente (nome, cognome, email, password, nome_universita, approvato) VALUES (?, ?, ?, ?, ?, 0)";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
